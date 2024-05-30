@@ -11,7 +11,7 @@ import List from "../components/Dashbord/List";
 import { getCoinData } from "../functions/getCoinData";
 import { getPrices } from "../functions/CoinPrices"
 import { settingChartData } from "../functions/settingChartData";
-import { setCoinObject } from "../functions/coinObject";
+import { settingCoinObject } from "../functions/settingCoinObject";
 import Footer from "../components/Common/Footer";
 
 function CoinPage() {
@@ -32,7 +32,7 @@ function CoinPage() {
   const getData = async () => {
     setLoading(false);
     let coinData = await getCoinData(id, setError);
-    setCoinObject(setCoin,coinData);
+    settingCoinObject(setCoin,coinData);
     if (coinData) {
       const prices = await getPrices(id, days, priceType, setError);
       if (prices) {

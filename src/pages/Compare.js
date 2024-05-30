@@ -10,7 +10,7 @@ import { get100Coins } from "../functions/get100Coins";
 import { getCoinData } from "../functions/getCoinData";
 import { getPrices } from "../functions/CoinPrices";
 import { settingChartData } from "../functions/settingChartData";
-import { setCoinObject } from "../functions/coinObject";
+import { settingCoinObject } from "../functions/settingCoinObject";
 import Footer from "../components/Common/Footer";
 
 function Compare() {
@@ -41,8 +41,8 @@ function Compare() {
       setAllCoins(coins);
       const data1 = await getCoinData(crypto1);
       const data2 = await getCoinData(crypto2);
-      setCoinObject(setCoin1Data, data1 );
-      setCoinObject(setCoin2Data, data2);
+      settingCoinObject(setCoin1Data, data1 );
+      settingCoinObject(setCoin2Data, data2);
       if (data1 && data2) {
         // getPrices
         const prices1 = await getPrices(crypto1, days, priceType);
@@ -61,7 +61,7 @@ function Compare() {
       setCrypto2(newCrypto2);
       // fetch coin2 data
       const data2 = await getCoinData(newCrypto2);
-      setCoinObject(setCoin2Data, data2);
+      settingCoinObject(setCoin2Data, data2);
       // fetch prices again
       const prices1 = await getPrices(crypto1, days, priceType);
       const prices2 = await getPrices(newCrypto2, days, priceType);
@@ -72,7 +72,7 @@ function Compare() {
       setCrypto1(newCrypto1);
       // fetch coin1 data
       const data1 = await getCoinData(newCrypto1);
-      setCoinObject(setCoin1Data, data1);
+      settingCoinObject(setCoin1Data, data1);
       // fetch coin prices
       const prices1 = await getPrices(newCrypto1, days, priceType);
       const prices2 = await getPrices(crypto2, days, priceType);
