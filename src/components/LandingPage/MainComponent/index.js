@@ -3,7 +3,7 @@ import './styles.css';
 import Button from '../../Common/Button';
 import iphone from '../../../assets/iphone.png';
 import gradient from '../../../assets/gradient.png';
-
+import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { RWebShare } from "react-web-share";
 import { toast } from "react-toastify";
@@ -23,9 +23,9 @@ function MainComponent(){
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.25, duration: 0.75 }}
         >
-          <a href="/dashbord">
+          <Link to='/dashbord'>
             <Button text={"Dashboard"} />
-          </a>
+          </Link>
           <RWebShare
                 data={{
                   text: "CryptoDashboard by Anuj Kaprawan",
