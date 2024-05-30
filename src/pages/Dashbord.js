@@ -80,7 +80,7 @@ function Dashboard() {
         </>
       )}
       <TopButton />
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
   );

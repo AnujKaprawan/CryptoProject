@@ -5,6 +5,9 @@ import iphone from '../../../assets/iphone.png';
 import gradient from '../../../assets/gradient.png';
 
 import { motion } from "framer-motion";
+import { RWebShare } from "react-web-share";
+import { toast } from "react-toastify";
+
 
 function MainComponent(){
     return <div className='flex-info'> 
@@ -14,10 +17,26 @@ function MainComponent(){
             <p className='info-text'>
                 Track crypto through a public api in real time. Visit the Dashbord to do so!
             </p>
-            <div className='btn-flex'>
-                <Button text={"Dashbord"} />    
-                <Button text={'Share App'} outlined={true}/>
-            </div>
+            <motion.div
+          className="btn-flex"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.25, duration: 0.75 }}
+        >
+          <a href="/dashboard">
+            <Button text={"Dashboard"} />
+          </a>
+          <RWebShare
+            data={{
+              text: "CryptoDashboard made by Anuj Kaprawan using React JS.",
+              url: "https://crypto-project.netlify.app",
+              title: "CryptoTracker.",
+            }}
+            onClick={() => toast.info("App Shared!")}
+          >
+            <Button text={"Share App"} outlined={true} />
+          </RWebShare>
+        </motion.div>
         </div>
         <div className='phone-container'>
             <motion.img src={iphone} 

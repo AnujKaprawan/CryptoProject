@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
@@ -6,9 +6,14 @@ import { convertNumber } from "../../../functions/convertNumber";
 import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
-
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import { saveItemToWatchlist } from "../../../functions/saveItemToWatchlist";
+import StarIcon from "@mui/icons-material/Star";
+import { removeItemToWatchlist } from "../../../functions/removeItemToWatchlist";
 
 function List({ coin, delay }) {
+  const watchlist = JSON.parse(localStorage.getItem("watchlist"));
+  const [isCoinAdded, setIsCoinAdded] = useState(watchlist?.includes(coin.id));
   return (
     <Link to={`/coin/${coin.id}`}>
       <motion.tr
@@ -84,7 +89,7 @@ function List({ coin, delay }) {
            ${convertNumber(coin.market_cap)}
           </td>
         </Tooltip>
-        {/* <td
+        <td
           className={`watchlist-icon ${
             coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
           }`}
@@ -99,7 +104,7 @@ function List({ coin, delay }) {
           }}
         >
           {isCoinAdded ? <StarIcon /> : <StarOutlineIcon />}
-        </td> */}
+        </td>
       </motion.tr>
     </Link>
   );

@@ -14,3 +14,10 @@
     z-index: 1000;
     cursor: pointer;
   }
+
+
+  .App{
+    display: flex;
+    flex-direction: column;
+    min-height: 150vh;
+  }

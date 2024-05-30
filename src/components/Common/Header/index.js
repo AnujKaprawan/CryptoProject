@@ -13,7 +13,7 @@ function Header(){
          <Link to='/'><p className='link'>Home</p></Link>
          <Link to='/compare'><p className='link'>Compare</p></Link>
          <Link to='/watchlist'><p className='link'>Watchlist</p></Link>
-         <Link to='/dashbord'><Button text={"Dashbord"} /></Link>  
+         <Link to='/dashbord'><Button text={"Dashboard"} /></Link>  
         </div>
         <div className='mobile-drawer'>
             <AnchorTemporaryDrawer/>
