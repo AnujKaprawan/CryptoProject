@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 
 function Header(){
     return <div className="navbar">
-        <h1 className="logo">
+        <a href='/'><h1 className="logo">
         CryptoTracker<span style={{color:"var(--orange)"}}>.</span>
         </h1>
+        </a>
         <div className="links">
          <Link to='/'><p className='link'>Home</p></Link>
          <Link to='/compare'><p className='link'>Compare</p></Link>
