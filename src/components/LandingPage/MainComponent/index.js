@@ -23,19 +23,21 @@ function MainComponent(){
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.25, duration: 0.75 }}
         >
-          <a href="/dashboard">
+          <a href="/dashbord">
             <Button text={"Dashboard"} />
           </a>
           <RWebShare
-            data={{
-              text: "CryptoDashboard made by Anuj Kaprawan using React JS.",
-              url: "https://crypto-project.netlify.app",
-              title: "CryptoTracker.",
-            }}
-            onClick={() => toast.info("App Shared!")}
-          >
-            <Button text={"Share App"} outlined={true} />
-          </RWebShare>
+                data={{
+                  text: "CryptoDashboard by Anuj Kaprawan",
+                  url: "https://crypto-may-project.netlify.app/",
+                  title: "CryptoTracker."
+                }}
+                onClick={() =>
+                    console.log("shared successfully!")
+                }
+            >
+                <button className="btn-flex1">Share App</button>
+            </RWebShare>
         </motion.div>
         </div>
         <div className='phone-container'>

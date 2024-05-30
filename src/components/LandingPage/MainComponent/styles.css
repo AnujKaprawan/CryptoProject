@@ -40,6 +40,23 @@
     margin-top: 2rem;
 }
 
+.btn-flex1
+{   background-color:var(--black);
+    color: var(--white);
+    border: 2px solid var(--orange);
+    padding: 0.65rem 1.7rem;
+    border-radius: 2.75rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 99px;
+    cursor: pointer;
+}
+
+    .btn-flex1:hover{
+        background-color: var(--orange);
+        transition: all 0.3s;
+    }
+
 .phone-container{
     width: 50%;
     position: relative;
@@ -89,6 +106,12 @@
 }
 
 @media only screen and (max-width: 1000px){
+    .flex-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1.5rem 3rem;
+    }
     .iphone{
         min-width: 250px;
         width: 50%;
@@ -104,6 +127,13 @@
 }
  
 @media only screen and (max-width: 800px){
+    .flex-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1.5rem 3rem;
+    }
+
     .left-component{
         width: 100%;
     }
@@ -116,6 +146,7 @@
         display: block;
         margin: auto;
         margin-top: 3rem;
+        margin-bottom: 78vh;
     }
 
     .iphone{
